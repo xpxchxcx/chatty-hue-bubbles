@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { Heart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 
@@ -11,6 +14,7 @@ interface Message {
 }
 
 const ChatBot = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
@@ -101,9 +105,20 @@ const ChatBot = () => {
     <div className="flex flex-col h-full bg-gradient-subtle">
       {/* Header */}
       <div className="bg-gradient-primary text-primary-foreground p-4 shadow-elevation">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-xl font-semibold">Hatch Real Estate Concierge</h1>
-          <p className="text-sm opacity-90">Your personal guide to finding the perfect home</p>
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-semibold">Hatch Real Estate Concierge</h1>
+            <p className="text-sm opacity-90">Your personal guide to finding the perfect home</p>
+          </div>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate("/swipe")}
+            className="bg-white/20 text-white border-white/30 hover:bg-white/30"
+          >
+            <Heart className="w-4 h-4 mr-2" />
+            Browse Properties
+          </Button>
         </div>
       </div>
       
