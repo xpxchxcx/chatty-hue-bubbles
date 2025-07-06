@@ -14,7 +14,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "👋 Hi there! I'm your AI assistant. How can I help you today?",
+      text: "🏠 Welcome to Hatch! I'm your real estate concierge. I'm here to help you navigate your home buying journey. What can I assist you with today?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -42,36 +42,40 @@ const ChatBot = () => {
     const lowerMessage = userMessage.toLowerCase();
     
     if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
-      return "Hello! It's great to meet you. What would you like to chat about?";
+      return "Hello! Welcome to Hatch. I'm excited to help you with your real estate journey. Are you looking to buy, sell, or just exploring your options?";
     }
     
     if (lowerMessage.includes("help")) {
-      return "I'm here to help! You can ask me questions about anything you'd like to discuss. What's on your mind?";
+      return "I'm here to help with all your real estate needs! Whether you're a first-time buyer, looking to sell, or interested in market insights, I can guide you through the process. What would you like to know?";
     }
     
     if (lowerMessage.includes("how are you")) {
-      return "I'm doing wonderful, thank you for asking! I'm excited to chat with you. How are you doing today?";
+      return "I'm doing wonderful, thank you for asking! I'm excited to help you find your perfect home. How can I assist you with your real estate needs today?";
     }
     
     if (lowerMessage.includes("name")) {
-      return "I'm your friendly AI assistant! You can call me whatever you'd like. What should I call you?";
+      return "I'm your Hatch Real Estate Concierge! I'm here to make your home buying or selling experience feel like magic. What should I call you?";
     }
     
-    if (lowerMessage.includes("weather")) {
-      return "I don't have real-time weather data, but I'd be happy to chat about weather in general or help you with something else!";
+    if (lowerMessage.includes("buy") || lowerMessage.includes("purchase") || lowerMessage.includes("home")) {
+      return "That's exciting! Buying a home is a wonderful journey. I can help you understand the process, explore neighborhoods, and connect you with our expert agents. What type of home are you looking for?";
+    }
+    
+    if (lowerMessage.includes("sell")) {
+      return "Looking to sell your home? I can help you understand current market conditions and connect you with our top-performing agents to get you the best value. Tell me about your property!";
     }
     
     if (lowerMessage.includes("thank")) {
-      return "You're very welcome! I'm always happy to help. Is there anything else you'd like to discuss?";
+      return "You're very welcome! I'm always here to help make your real estate experience smooth and enjoyable. What else can I assist you with?";
     }
     
     // Default responses
     const defaultResponses = [
-      "That's interesting! Tell me more about that.",
-      "I appreciate you sharing that with me. What else would you like to talk about?",
-      "Thanks for letting me know! How can I assist you further?",
-      "That sounds intriguing. Would you like to explore that topic more?",
-      "I'd love to help you with that. Can you provide a bit more detail?",
+      "That's great! Tell me more about your real estate goals.",
+      "I'd love to help you with that. Real estate can feel overwhelming, but I'm here to guide you through it.",
+      "Thanks for sharing! How can I help make your home buying or selling journey easier?",
+      "That sounds interesting! Would you like to explore how Hatch can help with that?",
+      "I'm here to help! Can you tell me more about what you're looking for in your real estate journey?",
     ];
     
     return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
@@ -98,8 +102,8 @@ const ChatBot = () => {
       {/* Header */}
       <div className="bg-gradient-primary text-primary-foreground p-4 shadow-elevation">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-xl font-semibold">AI Assistant</h1>
-          <p className="text-sm opacity-90">Your friendly conversational companion</p>
+          <h1 className="text-xl font-semibold">Hatch Real Estate Concierge</h1>
+          <p className="text-sm opacity-90">Your personal guide to finding the perfect home</p>
         </div>
       </div>
       
